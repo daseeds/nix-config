@@ -13,7 +13,7 @@
   disko.devices = {
     disk = {
       main = {
-        device = "/dev/lsblk";
+        device = "/dev/nvme0n1";
         type = "disk";
         content = {
           type = "gpt";
