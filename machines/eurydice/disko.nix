@@ -13,7 +13,7 @@
   disko.devices = {
     disk = {
       main = {
-        device = "/dev/disk/by-id/sdanvme-Vi3000_Internal_PCIe_NVMe_M.2_SSD_256GB_493734484830052";
+        device = "/dev/lsblk";
         type = "disk";
         content = {
           type = "gpt";
