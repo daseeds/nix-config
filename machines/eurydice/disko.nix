@@ -1,18 +1,19 @@
 # USAGE in your configuration.nix.
 # Update devices to match your hardware.
-{
- imports = [ ./disko-config.nix ];
- disko.devices.disk.main.device = "/dev/disk/by-id/sdanvme-Vi3000_Internal_PCIe_NVMe_M.2_SSD_256GB_493734484830052";
-# ata-ST14000NM005G-2KG133_ZL2HVF8F
-# ata-ST14000NM005G-2KG133_ZL2HXWBS
-# ata-ST14000NM005G-2KG133_ZL2K6NBN
-# ata-ST14000NM005G-2KG133_ZTM0A0Q0
+# {
+#  imports = [ ./disko-config.nix ];
+#  disko.devices.disk.main.
+# # ata-ST14000NM005G-2KG133_ZL2HVF8F
+# # ata-ST14000NM005G-2KG133_ZL2HXWBS
+# # ata-ST14000NM005G-2KG133_ZL2K6NBN
+# # ata-ST14000NM005G-2KG133_ZTM0A0Q0
 
-}
+# }
 {
   disko.devices = {
     disk = {
       main = {
+        device = "/dev/disk/by-id/sdanvme-Vi3000_Internal_PCIe_NVMe_M.2_SSD_256GB_493734484830052";
         type = "disk";
         content = {
           type = "gpt";
