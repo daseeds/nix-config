@@ -73,23 +73,21 @@
 
   };
 
- outputs = inputs@{ nixpkgs, home-manager, ... }: {
-    nixosConfigurations = {
-      hostname = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.jdoe = ./home.nix;
+  outputs =
+    { ... }@inputs:
+    let
+      helpers = import ./flakeHelpers.nix inputs;
+      inherit (helpers) mkMerge mkNixos mkDarwin;
+    in
+    mkMerge [
+      (mkNixos "eurydice" inputs.nixpkgs [
+        ./modules/zfs-root
+        ./modules/tailscale
+        ./modules/adios-bot
+        ./modules/duckdns
+        ./homelab
+        inputs.home-manager.nixosModules.home-manager
+      ])
 
-            # Optionally, use home-manager.extraSpecialArgs to pass
-            # arguments to home.nix
-          }
-        ];
-      };
-    };
-  };
+    ];
 }
