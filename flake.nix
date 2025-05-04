@@ -57,10 +57,10 @@
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    secrets = {
-      url = "git+ssh://git@github.com/daseeds/nix-private.git";
-      flake = false;
-    };
+    # secrets = {
+    #   url = "git+ssh://git@github.com/daseeds/nix-private.git";
+    #   flake = false;
+    # };
     jovian = {
       url = "github:Jovian-Experiments/Jovian-NixOS";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
