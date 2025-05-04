@@ -79,7 +79,7 @@
             options."com.sun:auto-snapshot" = "false";
             postCreateHook = "zfs list -t snapshot -H -o name | grep -E '^zroot/local/root@blank$' || zfs snapshot zroot/local/root@blank";
           };
-          docker = {
+          podman = {
             type = "zfs_volume";
             size = "50G";
             content = {
