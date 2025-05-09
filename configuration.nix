@@ -69,6 +69,9 @@
     powertop
     git
     wget
+    age
+    sops-nix
+    ss-to-age
     inputs.helix.packages."${pkgs.system}".helix
   ];
 
