@@ -35,7 +35,7 @@
             home-manager.useUserPackages = false;
 
             home-manager.users.daseeds.imports = [
-              ./users/notthebee/dots.nix
+              ./users/daseeds/dots.nix
             ];
           }
           
