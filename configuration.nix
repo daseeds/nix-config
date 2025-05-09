@@ -70,7 +70,7 @@
     git
     wget
     age
-    sops-nix
+    # sops-nix
     ssh-to-age
     inputs.helix.packages."${pkgs.system}".helix
   ];
