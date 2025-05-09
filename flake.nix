@@ -35,6 +35,7 @@
             home-manager.useUserPackages = false;
 
             home-manager.users.daseeds.imports = [
+              inputs.nix-index-database.hmModules.nix-index
               ./users/daseeds/dots.nix
             ];
           }
