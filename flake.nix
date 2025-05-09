@@ -22,10 +22,10 @@
       url = "github:Mic92/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # secrets = {
-    #   url = "git+ssh://git@github.com/daseeds/nix-private.git";
-    #   flake = false;
-    # };
+    secrets = {
+      url = "git+ssh://git@github.com/daseeds/nix-private.git";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
@@ -38,7 +38,7 @@
           # Import the previous configuration.nix we used,
           # so the old configuration file still takes effect
           ./configuration.nix
-          # "${inputs.secrets}/default.nix"
+          "${inputs.secrets}/default.nix"
           inputs.agenix.nixosModules.default
           ./users/daseeds
 
