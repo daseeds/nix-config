@@ -23,7 +23,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     secrets = {
-      url = "git+ssh://git@github.com/daseeds/nix-private.git";
+      url = "git+ssh://git@github.com/daseeds/nix-private.git?shallow=1";
       flake = false;
     };
   };
