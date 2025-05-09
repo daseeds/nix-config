@@ -27,13 +27,16 @@
           # Import the previous configuration.nix we used,
           # so the old configuration file still takes effect
           ./configuration.nix
+          ./users/daseeds
 
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
+            home-manager.useGlobalPkgs = false;
+            home-manager.useUserPackages = false;
 
-            home-manager.users.daseeds = import ./home.nix;
+            home-manager.users.daseeds.imports = [
+              ./users/notthebee/dots.nix
+            ];
           }
           
         ];
