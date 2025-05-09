@@ -9,18 +9,18 @@
   home.packages = with pkgs; [ grc ];
 
   programs = {
-    # starship = {
-    #   enable = true;
-    #   settings = {
-    #     add_newline = false;
-    #     gcloud = {
-    #       detect_env_vars = [ "GOOGLE_CLOUD" ];
-    #     };
-    #     aws = {
-    #       disabled = true;
-    #     };
-    #   };
-    # };
+    starship = {
+      enable = true;
+      settings = {
+        add_newline = false;
+        gcloud = {
+          detect_env_vars = [ "GOOGLE_CLOUD" ];
+        };
+        aws = {
+          disabled = true;
+        };
+      };
+    };
     zoxide = {
       enable = true;
       enableZshIntegration = true;
