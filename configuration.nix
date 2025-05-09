@@ -71,7 +71,7 @@
     wget
     age
     sops-nix
-    ss-to-age
+    ssh-to-age
     inputs.helix.packages."${pkgs.system}".helix
   ];
 
