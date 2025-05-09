@@ -48,6 +48,7 @@
             home-manager.useUserPackages = false;
 
             home-manager.users.daseeds.imports = [
+              inputs.agenix.homeManagerModules.default
               inputs.nix-index-database.hmModules.nix-index
               ./users/daseeds/dots.nix
               ./users/daseeds/age.nix
