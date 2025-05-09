@@ -44,6 +44,7 @@
           ./configuration.nix
           # "${inputs.secrets}/default.nix"
           inputs.agenix.nixosModules.default
+          inputs.sops-nix.nixosModules.sops
           ./users/daseeds
 
           home-manager.nixosModules.home-manager
