@@ -38,7 +38,7 @@
           # Import the previous configuration.nix we used,
           # so the old configuration file still takes effect
           ./configuration.nix
-          "${inputs.secrets}/default.nix"
+          # "${inputs.secrets}/default.nix"
           inputs.agenix.nixosModules.default
           ./users/daseeds
 
@@ -49,7 +49,7 @@
 
             home-manager.users.daseeds.imports = [
               inputs.nix-index-database.hmModules.nix-index
-              # ./users/daseeds/dots.nix
+              ./users/daseeds/dots.nix
               ./users/daseeds/age.nix
             ];
           }
