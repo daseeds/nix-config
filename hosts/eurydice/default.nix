@@ -12,9 +12,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    (map lib.custom.relativeToRoot [
-      "hosts/common"
-    ])
+    ../common
   ];
 
 
