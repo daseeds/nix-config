@@ -43,6 +43,6 @@
 
     clipboard.register = "unnamedplus"; # use system clipboard instead of internal registers
 
-  }
+  };
 
 }
