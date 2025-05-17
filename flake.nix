@@ -62,6 +62,7 @@
             home-manager.users.daseeds.imports = [
               inputs.agenix.homeManagerModules.default
               inputs.nix-index-database.hmModules.nix-index
+              inputs.nixvim.homeManagerModules.nixvim
               ./users/daseeds/dots.nix
               ./users/daseeds/age.nix
               ./users/daseeds/nvim.nix
