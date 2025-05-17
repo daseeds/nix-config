@@ -30,6 +30,13 @@
       url = "git+ssh://git@github.com/daseeds/nix-private.git?shallow=1";
       flake = false;
     };
+    # vim4LMFQR!
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-24.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+      #url = "github:nix-community/nixvim";
+      #inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };    
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
