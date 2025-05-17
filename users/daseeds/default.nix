@@ -5,6 +5,9 @@
   ...
 }:
 {
+  imports = [
+    inputs.nixvim.homeManagerModules.nixvim
+  ];
 
   nix.settings.trusted-users = [ "daseeds" ];
 
