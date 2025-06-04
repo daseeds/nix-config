@@ -1,5 +1,5 @@
 {
-  description = "A simple NixOS flake";
+  description = "A simple NixOS flake with improved secrets management";
 
   inputs = {
     # NixOS official package source, using the nixos-24.11 branch here
@@ -44,9 +44,9 @@
           # so the old configuration file still takes effect
           ./hosts/eurydice
           # Use improved SOPS configuration
-          ./hosts/common/sops.nix
+          ./hosts/common/sops-improved.nix
           # Use improved user configuration with SOPS-managed password
-          ./users/daseeds
+          ./users/daseeds/default-improved.nix
 
           home-manager.nixosModules.home-manager
           {
@@ -57,7 +57,7 @@
               inputs.nix-index-database.hmModules.nix-index
               inputs.nixvim.homeManagerModules.nixvim
               # Use improved SOPS configuration for user secrets
-              ./users/daseeds/sops.nix
+              ./users/daseeds/sops-improved.nix
               ./users/daseeds/dots.nix
               ./users/daseeds/nvim.nix
             ];

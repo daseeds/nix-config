@@ -14,7 +14,8 @@
         shell = pkgs.zsh;
         uid = 1000;
         isNormalUser = true;
-#        hashedPasswordFile = config.age.secrets.hashedUserPassword.path;
+        # Use SOPS-managed password hash
+        hashedPasswordFile = config.sops.secrets."users/daseeds/password".path;
         extraGroups = [
           "wheel"
           "users"
