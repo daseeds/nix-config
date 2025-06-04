@@ -46,9 +46,8 @@
       Defaults timestamp_timeout=15
       Defaults passwd_timeout=0
     '';
-    
-    # Restrict access to kernel logs
-    dmesg.enable = false;
+   
+
   };
 
   # Additional security packages
