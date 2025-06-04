@@ -129,14 +129,42 @@ sops secrets.yaml
 - **Fail2ban protection**: Automatic IP blocking for failed attempts
 - **Security monitoring**: Tools for system security assessment
 
+## Fixed Issues
+
+- ❌ Removed invalid `security.dmesg.enable` option (not available in NixOS 24.11)
+- ✅ Fixed fail2ban jail configuration syntax for NixOS 24.11
+- ✅ Corrected secrets input reference consistency
+
 ## Next Steps
 
-1. Review the improved configurations
-2. Update your secrets repository structure
-3. Generate new age keys
-4. Migrate existing secrets to SOPS format
-5. Update flake.nix imports
-6. Test the new configuration
-7. Remove deprecated files
+1. **Test the improved configurations**:
+   ```bash
+   # Test the configuration without switching
+   sudo nixos-rebuild test --flake .#eurydice
+   ```
+
+2. **If test succeeds, switch to new configuration**:
+   ```bash
+   sudo nixos-rebuild switch --flake .#eurydice
+   ```
+
+3. **Generate age keys for SOPS**:
+   ```bash
+   mkdir -p ~/.config/sops/age
+   age-keygen -o ~/.config/sops/age/keys.txt
+   ```
+
+4. **Update your secrets repository structure**
+5. **Migrate existing secrets to SOPS format**
+6. **Replace current files with improved versions**
+7. **Remove deprecated files**
+
+## Troubleshooting
+
+If you encounter issues:
+- Check NixOS version compatibility for specific options
+- Verify all input references match your flake.nix
+- Test configurations incrementally
+- Keep backups of working configurations
 
 This approach provides a more secure, maintainable, and scalable secrets management solution for your NixOS configuration.

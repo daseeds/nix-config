@@ -47,9 +47,6 @@
       Defaults timestamp_timeout=15
       Defaults passwd_timeout=0
     '';
-    
-    # Restrict access to kernel logs
-    dmesg.enable = false;
   };
 
   # Additional security packages
@@ -66,14 +63,16 @@
     maxretry = 3;
     bantime = "1h";
     jails = {
-      ssh = ''
-        enabled = true
-        port = ssh
-        filter = sshd
-        logpath = /var/log/auth.log
-        maxretry = 3
-        bantime = 3600
-      '';
+      sshd = {
+        settings = {
+          enabled = true;
+          port = "ssh";
+          filter = "sshd";
+          logpath = "/var/log/auth.log";
+          maxretry = 3;
+          bantime = 3600;
+        };
+      };
     };
   };
 }
