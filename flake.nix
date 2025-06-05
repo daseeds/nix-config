@@ -57,7 +57,7 @@
               inputs.nix-index-database.hmModules.nix-index
               inputs.nixvim.homeManagerModules.nixvim
               # Use improved SOPS configuration for user secrets
-              ./users/daseeds/sops.nix
+              ./users/daseeds/sops-minimal.nix
               ./users/daseeds/dots.nix
               ./users/daseeds/nvim.nix
             ];
