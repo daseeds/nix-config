@@ -33,7 +33,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, vscode-server, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     # Please replace my-nixos with your hostname
     nixosConfigurations = {
       eurydice =  nixpkgs.lib.nixosSystem {
