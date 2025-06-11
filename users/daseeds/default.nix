@@ -7,9 +7,6 @@
 {
 
   nix.settings.trusted-users = [ "daseeds" ];
-  imports = [
-    "${fetchTarball "https://github.com/msteen/nixos-vscode-server/tarball/master"}/modules/vscode-server/home.nix"
-  ];
 
   users = {
     users = {
@@ -60,7 +57,7 @@
     # lynis
     # rkhunter
   ];
-
+  
   services.vscode-server.enable = true;
 
   # Enable fail2ban for SSH protection

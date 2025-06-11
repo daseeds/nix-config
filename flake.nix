@@ -31,9 +31,10 @@
       url = "github:nix-community/nixvim/nixos-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    vscode-server.url = "github:nix-community/nixos-vscode-server";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, vscode-server, ... }@inputs: {
     # Please replace my-nixos with your hostname
     nixosConfigurations = {
       eurydice =  nixpkgs.lib.nixosSystem {
@@ -47,7 +48,10 @@
           ./hosts/common/sops.nix
           # Use improved user configuration with SOPS-managed password
           ./users/daseeds
-     
+          vscode-server.nixosModules.default
+          ({ config, pkgs, ... }: {
+            services.vscode-server.enable = true;
+          })          
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = false;
