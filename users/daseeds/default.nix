@@ -54,8 +54,8 @@
   environment.systemPackages = with pkgs; [
     # Security tools
     fail2ban
-    lynis
-    rkhunter
+    # lynis
+    # rkhunter
   ];
 
   # Enable fail2ban for SSH protection
